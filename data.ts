@@ -1,0 +1,145 @@
+import { Pet, Product } from "./types";
+
+   export const pets: Pet[] = [
+    {
+      id: "MO231",
+      name: "Pomeranian White",
+      image: "/image1.png",
+      gender: "Male",
+      age: "02 months",
+      price: "6.900.000 VND"
+    },
+    {
+      id: "MO502",
+      name: "Poodle Tiny Yellow",
+      image: "/image2.png",
+      gender: "Female",
+      age: "02 months",
+      price: "3.900.000 VND"
+    },
+    {
+      id: "MO102",
+      name: "Poodle Tiny Sepia",
+      image: "/image3.png",
+      gender: "Male",
+      age: "02 months",
+      price: "4.000.000 VND"
+    },
+    {
+      id: "MO512",
+      name: "Alaskan Malamute Grey",
+      image: "/image4.png",
+      gender: "Male",
+      age: "02 months",
+      price: "8.900.000 VND"
+    },
+    {
+      id: "MO231",
+      name: "Pembroke Corgi Cream",
+      image: "/image5.png",
+      gender: "Female",
+      age: "02 months",
+      price: "7.900.000 VND"
+    },
+    {
+      id: "MO502",
+      name: "Pembroke Corgi Tricolor",
+      image: "/image6.png",
+      gender: "Male",
+      age: "02 months",
+      price: "9.000.000 VND"
+    },
+    {
+      id: "MO231",
+      name: "Pomeranian White",
+      image: "/image7.png",
+      gender: "Female",
+      age: "02 months",
+      price: "6.500.000 VND"
+    },
+    {
+      id: "MO512",
+      name: "Poodle Tiny Dairy Cow",
+      image: "/image8.png",
+      gender: "Male",
+      age: "02 months",
+      price: "5.000.000 VND"
+    },
+  ];
+
+
+
+  export const products: Product[] = [
+    {
+        image: '/imageProd1.png',
+        name: 'Reflex Plus Adult Cat Food Salmon',
+        productType: 'Product: Cat Food',
+        details: 'Size: 380gm',
+        price: '140.000 VND',
+        gift: 'Free Toy & Free Shaker',
+        giftType: 'cat'
+    },
+    {
+        image: '/imageProd2.png',
+        name: 'Reflex Plus Adult Cat Food Salmon',
+        productType: 'Product: Cat Food',
+        details: 'Size: 1.5kg',
+        price: '1.100.000 VND',
+        gift: 'Free Toy & Free Shaker',
+        giftType: 'cat'
+    },
+    {
+        image: '/imageProd3.png',
+        name: 'Cat scratching ball toy kitten sisal rope ball',
+        productType: 'Product: Toy',
+        details: '',
+        price: '410.000 VND',
+        gift: 'Free Cat Food',
+        giftType: 'cat'
+    },
+    {
+        image: '/imageProd4.png',
+        name: 'Cute Pet Cat Warm Nest',
+        productType: 'Product: Toy',
+        details: '',
+        price: '410.000 VND',
+        gift: 'Free Cat Food',
+        giftType: 'cat'
+    },
+    {
+        image: '/imageProd5.png',
+        name: 'NaturVet Dogs - Omega-Gold Plus Salmon Oil',
+        productType: 'Product: Dog Food',
+        details: 'Size: 380gm',
+        price: '350.000 VND',
+        gift: 'Free Toy & Free Shaker',
+        giftType: 'dog'
+    },
+    {
+        image: '/imageProd6.png',
+        name: 'Costumes Fashion Pet Clothes Cowboy Rider',
+        productType: 'Product: Costume',
+        details: 'Size: 1.5kg',
+        price: '500.000 VND',
+        gift: 'Free Toy & Free Shaker',
+        giftType: 'dog'
+    },
+    {
+        image: '/imageProd7.png',
+        name: 'Costumes Chicken drumsti cki Headband',
+        productType: 'Product: Costume',
+        details: '',
+        price: '400.000 VND',
+        gift: 'Free Cat Food',
+        giftType: 'cat'
+    },
+    {
+        image: '/imageProd8.png',
+        name: 'Plush Pet Toy',
+        productType: 'Product: Toy',
+        details: '',
+        price: '250.000 VND',
+        gift: 'Free Food & Shaker',
+        giftType: 'cat'
+    },
+];

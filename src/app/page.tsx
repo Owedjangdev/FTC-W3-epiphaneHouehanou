@@ -1,103 +1,96 @@
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import NavBar from "@/components/Navbar";
+import PetCard from "@/components/OurPet";
+import OurProducts from "@/components/OurProduct";
+import PetAdoptionSection from "@/components/PetAdoptionSection";
+import UPL from "@/components/UPK";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="w-full">
+      <NavBar />
+      <div className="bg-secondary">
+        {/* Grande forme de fond en beige (le cercle coupé) */}
+        <div className=" relative w-full overflow-hidden  px-5 md:px-[10%]"></div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        {/* Contenu principal */}
+        <div className="relative   flex flex-col md:flex-row  md:space-x-16 items-center justify-between h-full px-6 md:px-45 py-16">
+          {/* Partie texte et boutons */}
+          <div>
+            <div className="flex flex-row gap-9">
+              <h1 className="text-2xl md:text-4xl font-bold text-primary-80 mb-4">
+                <span className="w-16 h-16  bg-secondary-80  rotate-60 rounded-full ">
+                  O
+                </span>
+                ne More Friend
+                <br />
+                Thousands More Fun!
+              </h1>
+
+              <div className=" w-4 h-4 bg-blue-900 bottom-2 transform rotate-45"></div>
+            </div>
+            <p className="text-gray-700 text-sm mb-8">
+              Having a pet means you have more joy, a new friend,a happy person{" "}
+              <br /> who will always be with you to have fun We have 200+
+              different pets <br /> that can meet your needs!
+            </p>
+            <div className="flex flex-row  gap-2 ">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 justify-center px-6 py-3 border border-gray-900 text-gray-900 rounded-full font-medium transition duration-300 hover:bg-gray-100"
+              >
+                View Intro{" "}
+                <Image
+                  src="/Videoicon.png"
+                  alt="Smiling person holding a corgi"
+                  width={18}
+                  height={18}
+                />
+              </Link>
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center px-6 py-3 bg-blue-900 text-white rounded-full font-medium transition duration-300 hover:bg-blue-800"
+              >
+                Explore Now
+              </Link>
+            </div>
+          </div>
+
+          {/* Partie image */}
+
+          <div className=" flex relative mt-12 md:mt-0">
+            <div className="relative w-full h-full">
+              {/* L'image de la personne avec le chien */}
+              <Image
+                src="/homePhoto.png"
+                alt="Smiling person holding a corgi"
+                width={1887}
+                height={1258}
+                className="relative z-30 w-full h-full max-h-[400px]"
+              />
+
+              {/* Forme bleue (en bas) */}
+              {/* Forme bleue (en bas) */}
+              <div className="absolute bottom-12 left-[5%] w-[60%] h-[80%] bg-blue-900 rounded-2xl rotate-16 z-10"></div>
+
+              {/* Forme rouge (au-dessus) */}
+              <div className="absolute bottom-[20%] left-[9%] w-[60%] h-[80%]  rounded-2xl bg-secondary-80 z-20 rotate-35"></div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      <PetCard />
+      <HeroSection />
+
+      <OurProducts />
+      <PetAdoptionSection />
+      <UPL />
+
+      <Footer />
     </div>
   );
 }

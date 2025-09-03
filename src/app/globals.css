@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
+/* ============================= */
+/* 🎨 PALETTE GLOBALE            */
+/* ============================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* === Primary Color (Dark Blue) === */
+  --primary: #0A2240;       /* Dark Blue */
+  --primary-80: #003459;    /* Dark Blue 80 */
+  --primary-60: #0F3A70;    /* Dark Blue 60 */
+  --primary-40: #1976D2;    /* Dark Blue 40 */
+
+  /* === Secondary Color (Mon Yellow) === */
+  --secondary: #FCEED5 ;
+  --secondary-20: #F9E0A0;     /* Mon Yellow */
+  --secondary-80: #F6D67B;  /* Mon Yellow 80 */
+  --secondary-60: #F3CD55;  /* Mon Yellow 60 */
+  --secondary-40: #F0C42F;  /* Mon Yellow 40 */
+
+  /* === State Color === */
+  --state-red: #FF4C4C;     /* Pink Red */
+  --state-green: #4CAF50;   /* Green Light */
+  --state-orange: #FF9800;  /* Orange Shine */
+  --state-blue: #2196F3;    /* Blue Sea */
+
+  /* === Neutral Color === */
+  --neutral-100: #0A0A0A;   /* Noir profond */
+  --neutral-80: #333333; 
+   --neutral-20: #667479
+     /* Gris foncé */
 }
 
+/* ============================= */
+/* ⚡️ Tailwind Theme Mapping    */
+/* ============================= */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Primary */
+  --color-primary: var(--primary);
+  --color-primary-80: var(--primary-80);
+  --color-primary-60: var(--primary-60);
+  --color-primary-40: var(--primary-40);
+
+  /* Secondary */
+  --color-secondary: var(--secondary);
+  --color-secondary-80: var(--secondary-80);
+  --color-secondary-60: var(--secondary-60);
+  --color-secondary-40: var(--secondary-40);
+
+  /* State */
+  --color-state-red: var(--state-red);
+  --color-state-green: var(--state-green);
+  --color-state-orange: var(--state-orange);
+  --color-state-blue: var(--state-blue);
+
+  /* Neutral */
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-80: var(--neutral-80);
+  --color-neutral-20: var(--neutral-20);
 }
 
+/* ============================= */
+/* 🌙 Dark Mode (optionnel)      */
+/* ============================= */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --neutral-100: #FFFFFF;
+    --neutral-80: #AAAAAA;
+    --primary: #1976D2;  /* Primary plus clair en dark mode */
   }
 }
 
+/* ============================= */
+/* 🖋 Styles généraux            */
+/* ============================= */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+  color: var(--neutral-80);
+  font-family: system-ui, sans-serif;
 }
