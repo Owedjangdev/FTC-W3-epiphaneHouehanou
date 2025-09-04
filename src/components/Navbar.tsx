@@ -36,22 +36,19 @@ const NavBar = () => {
   );
 
   return (
-    <div className="bg-secondary px-5 md:px-[13%] py-4 relative">
-      <div className="flex justify-between items-center gap-4">{/* Bouton mobile */}
-        <button
-          className="sm:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
+    <nav className="fixed top-0 left-0 w-full bg-secondary px-5 md:px-[13%] py-4 shadow-md z-50">
+      <div className="flex justify-between items-center gap-4">
+        {/* Bouton mobile */}
+        <button className="sm:hidden" onClick={() => setMenuOpen(!menuOpen)}>
           <Menu className="w-6 h-6" />
         </button>
-       
+
         {/* Logo */}
         <div className="flex items-center">
           <Image src="/logo.png" alt="logo" width={115} height={40} />
         </div>
 
-               <Search className=" sm:hidden   " />
-          
+        <Search className="sm:hidden" />
 
         {/* Menu desktop */}
         <div className="hidden sm:flex items-center gap-6 flex-1">
@@ -80,40 +77,26 @@ const NavBar = () => {
             <span>VND</span>
           </div>
         </div>
-
-        
       </div>
 
       {/* Menu mobile */}
       <div
-        className={`absolute top-0 w-full bg-[#FCEED5] h-screen flex flex-col gap-4 p-6
-          transition-all duration-300 sm:hidden z-50 ${
-            menuOpen ? "left-0" : "left-full"
-          }`}
+        className={`absolute top-0 left-0 w-full bg-[#FCEED5] h-screen flex flex-col gap-6 p-6
+          transition-transform duration-300 sm:hidden z-40
+          ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
-        <div className="flex justify-between items-center">
-          <button
-            className="  sm:hidden "
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
+        <div className="flex justify-end">
+          <button onClick={() => setMenuOpen(false)}>
             <X className="w-6 h-6" />
           </button>
         </div>
 
-        {renderLinks("px-2 py-2 roundede-sm bg-secondary-80 text-center text-white font bold text-2xl")}
-
-       
-       
+        {renderLinks(
+          "px-2 py-3 rounded-sm bg-secondary-80 text-center text-white font-bold text-2xl"
+        )}
       </div>
-    </div>
+    </nav>
   );
 };
 
 export default NavBar;
-
-
-
-
-
-
-
