@@ -1,5 +1,5 @@
 // Définition de l'interface pour les propriétés du composant PetCard
- export interface PetCardProps {
+export interface PetCardProps {
   imageSrc: string;
   petName: string;
   petId: string;
@@ -9,7 +9,7 @@
 }
 
 // Définition de l'interface pour un seul animal dans le tableau
- export interface Pet {
+export interface Pet {
   id: string;
   name: string;
   image: string;
@@ -18,18 +18,23 @@
   price: string;
 }
 
-
-
-
-
-export interface Product {
-    image: string;
-    name: string;
-    productType: string;
-    details: string;
-    price: string;
-    gift: string;
-    giftType: string;
+export interface Chiot {
+  id: number;
+  nom: string;
+  race: string;
+  sexe: "Mâle" | "Femelle";
+  age: string;
+  poids: string;
+  prix: number;
+  imageUrl: string;
 }
 
-
+export interface Product {
+  image: string;
+  name: string;
+  productType: string;
+  details: string;
+  price: string;
+  gift: string;
+  giftType: string;
+}

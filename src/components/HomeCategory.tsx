@@ -1,83 +1,51 @@
+// src/components/HeroSection.tsx
 "use client";
-
+import React from 'react';
+import { ChevronRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
-export default function HeroSection() {
+import HeroContentCard from './ui/HeroContentCard';
+
+const HeroSection: React.FC = () => {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 md:px-6 py-6">
-      <div className="relative rounded-3xl overflow-hidden h-[220px] md:h-[360px] bg-[#FAEBD7]">
-        {/* Fond bleu (SVG) à droite */}
-        <svg
-          className="absolute inset-0 w-full h-full z-0"
-          viewBox="0 0 1440 360"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            d="
-              M1440 0
-              H720
-              C540 0, 540 360, 720 360
-              H1440
-              Z
-            "
-            fill="#172554"
-          />
-        </svg>
-
-        {/* Image des chiens à gauche, au-dessus du fond crème */}
-        <div className="absolute left-0 bottom-0 z-20 w-[60%] md:w-[50%]">
-          <Image
-            src="/imageCategoHome.png"
-            alt="Groupe de chiens de différentes races"
-            width={1000}
-            height={400}
-            className="object-cover"
-            priority
-          />
-        </div>
-
-        {/* Texte et boutons à droite, sur le fond bleu */}
-        <div className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 z-30 w-[45%] md:w-[45%] text-[#EBE7DF]">
-          <h1 className="text-2xl md:text-5xl font-extrabold leading-tight">
-            One More Friend
-          </h1>
-
-          <h2 className="text-lg md:text-2xl font-extrabold mt-1">
-            Thousands More Fun!
-          </h2>
-
-          <p className="mt-3 md:mt-4 text-[11px] md:text-sm text-[#EBE7DF] max-w-[520px]">
-            Having a pet means you have more joy, a new friend, a happy person
-            who will always be with you to have fun. We have 200+ different pets
-            that can meet your needs!
-          </p>
-
-          <div className="mt-4 md:mt-6 flex items-center gap-4">
-            {/* Bouton contour */}
-            <Link
-              href="#intro"
-              className="inline-flex items-center gap-3 rounded-full border-2 border-[#EBE7DF] px-5 md:px-6 py-2 bg-transparent text-[#EBE7DF] text-sm md:text-base font-medium hover:bg-[#EBE7DF]/20 transition"
-            >
-              <span>View Intro</span>
-              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-current">
-                <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor">
-                  <path d="M4 3.2v5.6L9 6 4 3.2z" />
-                </svg>
-              </span>
-            </Link>
-
-            {/* Bouton plein */}
-            <Link
-              href="#explore"
-              className="inline-flex items-center rounded-full bg-[#EBE7DF] text-[#172554] px-5 md:px-6 py-2 text-sm md:text-base font-medium hover:bg-white transition"
-            >
-              Explore Now
-            </Link>
-          </div>
-        </div>
+    // Le conteneur principal avec le fond de couleur clair et les coins arrondis.
+    <div className="relative w-full max-w-7xl overflow-hidden rounded-b-[40px]  mx-auto px-4 md:px-8 pt-10 m-10 pb-48 lg:pb-64">
+      {/* Fil d'Ariane, décommenté pour le rendre visible */}
+      <div className="absolute top-4 left-8 text-[#6B7280] flex space-x-2 items-center z-20">
+        <span className="text-sm font-medium">Home</span>
+        <ChevronRight size={18} />
+        <span className="text-sm font-medium">Dog</span>
+        <ChevronRight size={18} />
+        <span className="text-sm font-medium">Small Dog</span>
       </div>
-    </section>
+
+      {/* Le fond de couleur foncée avec la forme organique (blob). */}
+      <div className="absolute top-0 right-0 w-[50%] h-full bg-[#003459] rounded-tl-[150px] z-10"></div>
+
+      {/* La carte de contenu, positionnée à droite. */}
+      <div className="absolute top-1/2 right-4 transform -translate-y-1/2 w-[60%] max-w-[500px] lg:right-16 z-20">
+        <HeroContentCard />
+      </div>
+
+      {/* L'image des chiens. Positionnée à gauche.
+          La classe `bottom-[-20px]` est la clé. Elle fait remonter l'image de 20 pixels
+          par rapport au bas de son conteneur parent (qui est `HeroSection`).
+          Le z-index de 30 est correct pour la placer au-dessus des autres éléments. */}
+      <div className="absolute bottom-[-20px]  left-0 w-[60%] z-30">
+            
+            <Image
+          src="/categoryImage.png"
+          alt="Groupe de chiens"
+          width={800}
+          height={600}
+          className="w-full h-auto object-contain "
+          priority
+        />
+        
+
+      </div>
+    </div>
   );
-}
+};
+
+export default HeroSection;

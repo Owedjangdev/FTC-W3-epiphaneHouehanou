@@ -36,7 +36,7 @@ const PetAdoptionSection: React.FC = () => {
                     </Link>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-items-center">
+                <div className="hidden  md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-items-center">
                     {petBrands.map((brand) => (
                         <div key={brand.name} className="relative w-32 h-16 sm:w-28 sm:h-14 flex items-center justify-center p-2">
                             <Image

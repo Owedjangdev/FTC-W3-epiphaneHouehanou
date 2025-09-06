@@ -48,9 +48,10 @@ export default function HeroSection() {
           </h1>
 
           <h2 className="text-lg md:text-2xl font-extrabold mt-1">
-            Thousands More Fun!
+            Thousands More Fun!   
           </h2>
 
+         <h2>gang</h2>
           <p className="mt-3 md:mt-4 text-[11px] md:text-sm text-[#545B61] max-w-[520px]">
             Having a pet means you have more joy, a new friend, a happy person
             who will always be with you to have fun. We have 200+ different pets
