@@ -24,7 +24,7 @@ export interface Chiot {
   race: string;
   sexe: "Mâle" | "Femelle";
   age: string;
-  poids: string;
+  color: string;
   prix: number;
   imageUrl: string;
 }
