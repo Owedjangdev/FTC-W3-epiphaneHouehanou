@@ -36,7 +36,7 @@ const NavBar = () => {
   );
 
   return (
-    <div className=" px-5 md:px-[13%] py-4 relative">
+    <div className=" px-5 md:px-[13%] py-4 fixed">
       <div className="flex justify-between items-center gap-4">{/* Bouton mobile */}
         <button
           className="sm:hidden"
