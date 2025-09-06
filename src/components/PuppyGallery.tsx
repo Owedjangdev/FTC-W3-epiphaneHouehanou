@@ -1,34 +1,26 @@
 "use client"
 
 import { useState, useEffect } from 'react';
- // Le composant de tri/filtre
-import { Chiot } from '../../types';
 import FilterSort from './FiltrerMobile';
 import { chiotsData } from '../../data';
-
-
+import { Chiot } from '../../types';
 
 const PuppyGallery = () => {
-  // État qui stocke les valeurs des filtres et du tri
   const [filtres, setFiltres] = useState({
     race: '',
     prixMax: null,
     sortBy: 'popular',
   });
 
-  // État qui stocke la liste de chiots à afficher (initialement tous les chiots)
   const [chiotsAfficher, setChiotsAfficher] = useState<Chiot[]>(chiotsData);
 
-  // Utilisez useEffect pour déclencher la mise à jour des chiots
   useEffect(() => {
-    // 1. Appliquer les filtres
-    let resultat: Chiot[] = chiotsData.filter(chiot => {
+    const resultat = chiotsData.filter(chiot => {
       const correspondRace = filtres.race === '' || chiot.race === filtres.race;
       const correspondPrix = filtres.prixMax === null || chiot.prix <= filtres.prixMax!;
       return correspondRace && correspondPrix;
     });
 
-    // 2. Appliquer le tri sur les chiots filtrés
     switch (filtres.sortBy) {
       case 'price-asc':
         resultat.sort((a, b) => a.prix - b.prix);
@@ -38,42 +30,38 @@ const PuppyGallery = () => {
         break;
       case 'popular':
       default:
-        // Le tri par défaut (laissez tel quel)
         break;
     }
 
-    // 3. Mettre à jour l'état de la liste des chiots à afficher
     setChiotsAfficher(resultat);
     
-  }, [filtres]); // Ce hook s'exécute à chaque fois que 'filtres' change
+  }, [filtres]);
 
-  // Fonction pour mettre à jour les filtres (passée au composant enfant)
   const handleSortChange = (value: string) => {
     setFiltres(prevFiltres => ({ ...prevFiltres, sortBy: value }));
   };
 
   const handleFilterClick = () => {
-    // Logique pour basculer le panneau de filtre
     console.log('Bouton de filtre cliqué !');
   };
 
   return (
-    <div className="flex  gap-6">
-      {/* Panneau de filtre latéral */}
-      <div className="w-1/4 p-4 border-r border-gray-200">
+    // Conteneur principal: Centré avec une marge horizontale sur mobile
+    <div className="flex flex-col items-center p-4 md:p-6 lg:p-8">
+      {/* Panneau de filtre latéral : masqué sur mobile, visible sur les écrans plus grands */}
+      <div className="hidden md:block md:w-1/4 md:pr-4 md:border-r md:border-gray-200">
         <h2 className="text-xl font-bold mb-4">Filtre</h2>
-        {/* Ajoutez ici d'autres filtres (input, radio, etc.) qui appellent setFiltres */}
+        {/* Ajoutez ici d'autres filtres */}
       </div>
 
       {/* Contenu principal */}
-      <div className="flex-1 p-4">
+      <div className="w-full max-w-lg md:max-w-none flex-1">
         <FilterSort
           onSortChange={handleSortChange}
           onFilterClick={handleFilterClick}
         />
 
-        {/* La liste des chiots */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
           {chiotsAfficher.map(chiot => (
             <div key={chiot.id} className="bg-white rounded-lg shadow-md overflow-hidden">
               <img src={chiot.imageUrl} alt={chiot.nom} className="w-full h-48 object-cover" />
