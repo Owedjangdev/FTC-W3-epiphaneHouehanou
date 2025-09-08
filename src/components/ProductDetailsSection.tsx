@@ -73,7 +73,7 @@ const ProductDetailsSection: React.FC = () => {
               <div
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className={`relative w-20 h-15 rounded-xl overflow-hidden cursor-pointer shadow-xl border border-gray-300 ${
+                className={`relative w-94 md:h-15    overflow-hidden cursor-pointer shadow-xl border border-gray-300 ${
                   currentImageIndex === index
                     ? 'border-[#002444]'
                     : 'border-transparent'
@@ -139,8 +139,9 @@ const ProductDetailsSection: React.FC = () => {
       
         <div className="lg:w-2/5 mt-8 lg:mt-0">
 
-        <nav className="font-medium text-neutral-20  flex  items-center  gap-2 mb-4 text-sm">
-        <Link href="/">Home</Link><ChevronRight size={16}/>  <Link href="/dog">Dog</Link><ChevronRight size={16}/>{' '}
+        <nav className="font-medium text-neutral-20  flex  text-xs  items-center  gap-2 mb-4 md:text-sm">
+        <Link href="/">Home</Link><ChevronRight size={16}/>  
+        <Link href="/dog">Dog</Link><ChevronRight size={16}/>{' '}
         <Link href="#">Lodge Dog</Link><ChevronRight size={16}/> Shiba Inu Sepia
       </nav>
 <h2 className="font-medium text-neutral-200 mb-2 text-sm">
@@ -155,13 +156,13 @@ const ProductDetailsSection: React.FC = () => {
           <div className="flex gap-4 items-center mb-8 ">
             <Link
               href="#"
-              className="bg-primary-80 text-white w-[138px]  h-[44px]  rounded-full font-semibold hover:bg-primary-90 transition-colors flex items-center justify-center gap-2"
+              className="bg-primary-80 text-white w-[138px]  hover:bg-blue-950 h-[44px]  rounded-full font-semibold hover:bg-primary-90 transition-colors flex items-center justify-center gap-2"
             >
               Contact us
             </Link>
             <Link
               href="#"
-              className=" w-[217px]  h-[44px] border  font-semibold hover:bg-primary-90 transition-colors flex items-center rounded-[57px] justify-center gap-2"
+              className=" sm:w-[217px] w-[233px] h-[48px]    sm:h-[44px]  border  font-semibold hover:bg-primary-90 transition-colors flex items-center rounded-[57px] justify-center gap-2"
                  >
               <MessageSquareMore  size={27}/> Chat with Hotline
             </Link>

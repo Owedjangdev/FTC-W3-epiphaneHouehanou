@@ -21,7 +21,7 @@ const puppies: Puppy[] = [
 ];
 
 const PuppyCard: React.FC<{ puppy: Puppy }> = ({ puppy }) => (
-  <Link href={`/puppy/${puppy.id}`} className="block bg-[#FCEED5] rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+  <Link href={`/puppy/${puppy.id}`} className="block bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
     <div className="relative w-full aspect-square">
       <Image src={puppy.image} alt={puppy.name} width={264}
                 height={264}
