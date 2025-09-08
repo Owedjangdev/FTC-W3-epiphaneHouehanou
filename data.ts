@@ -1,4 +1,4 @@
-import { Chiot, Pet, Product } from "./types";
+import { Article, Chiot, Pet, Product, ProductAbout } from "./types";
 
 export const pets: Pet[] = [
   {
@@ -66,6 +66,34 @@ export const pets: Pet[] = [
     price: "5.000.000 VND",
   },
 ];
+
+
+
+export const articles:Article[] = [
+    {
+        category: 'Pet knowledge',
+        image: '/imageUPK1.png',
+        title: 'What is a Pomeranian? How to Identify Pomeranian Dogs',
+        excerpt: 'The Pomeranian, also known as the Pomeranian (Pom) dog, is always in the top of the cutest pets, not only that, the small, lovely, smart, friendly, and skillful circus dog...',
+        link: '/knowledge/pomeranian'
+    },
+    {
+        category: 'Pet knowledge',
+        image: '/imageUPK2.png',
+        title: 'Dog Diet You Need To Know',
+        excerpt: 'Creating a dog\'s diet may seem simple at first, but there are some rules you should know so that your dog can easily absorb the nutrients in the diet. For those who are just starting to raise dogs, especially...',
+        link: '/knowledge/dog-diet'
+    },
+    {
+        category: 'Pet knowledge',
+        image: '/imageUPK3.png',
+        title: 'Why Dogs Bite and Destroy Furniture and How to Prevent It Effectively',
+        excerpt: 'Dog bites are common during development. However, no one wants to see their furniture or important items being bitten by a dog.',
+        link: '/knowledge/furniture'
+    },
+];
+
+
 
 export const products: Product[] = [
   {
@@ -161,7 +189,7 @@ export const chiotsData: Chiot[] = [
     age: "2 mois",
     color: "0.9 kg",
     prix: 3900000,
-    imageUrl: "/imgCte2.png",
+    imageUrl: "/imgCte3.png",
   },
   {
     id: 3,
@@ -401,7 +429,7 @@ export const chiotsData: Chiot[] = [
     age: "2 mois",
     color: "0.8 kg",
     prix: 3900000,
-    imageUrl: "/imgCte25.png",
+    imageUrl: "/imgCte22.png",
   },
   {
     id: 27,
@@ -664,3 +692,38 @@ export const chiotsData: Chiot[] = [
     imageUrl: "/imgCte20.png",
   },
 ];
+
+
+export const productData: ProductAbout = {
+  name: 'Shiba Inu Sepia',
+  price: '34.000.000 VND',
+  sku: 'SKU#1000076',
+  details: [
+    { label: 'SKU', value: 'SKU#1000076' },
+    { label: 'Gender', value: 'Female' },
+    { label: 'Age', value: '2 months' },
+    { label: 'Size', value: 'Small' },
+    { label: 'Color', value: 'Black & Tan' },
+    { label: 'Vaccinated', value: 'Yes' },
+    { label: 'Dewormed', value: 'Yes' },
+    { label: 'Cert', value: 'Yes (MKA)' },
+    { label: 'Microchip', value: 'Yes' },
+    { label: 'Location', value: 'Vietnam' },
+    { label: 'Published Day', value: '12-Oct-2023' },
+    {
+      label: 'Added Information',
+      value: 'Pure breed Shih Tzu.Good body structure.With MKA cert and Microchip.Father from champion lineage.',
+    }
+  ],
+  images: [
+    '/shiba-main.png',
+    '/shiba-thumb1.png',
+    '/shiba-thumb2.png',
+    '/shiba-thumb3.png',
+    '/shiba-thumb4.png',
+    '/shiba-thumb5.png',
+    '/shiba-thumb6.png',
+     '/shiba-thumb7.png',
+    
+  ],
+};

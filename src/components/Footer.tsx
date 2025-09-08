@@ -11,8 +11,8 @@ export default function Footer() {
           <h3 className="text-white text-lg md:text-xl font-bold text-center md:text-left">
             Register Now So You Don&apos;t Miss <br className="hidden md:inline" />Our Programs
           </h3>
-          <div className="flex flex-col  bg-white sm:flex-row items-center  p-2 justify-center space-y-6 sm:space-y-0 sm:space-x-4 w-full md:w-[707px] h-auto">
-            <input 
+          <div className="flex flex-col sm:flex-row items-center p-2 justify-center space-y-6 sm:space-y-0 sm:space-x-4 w-full md:w-[707px] h-auto bg-white rounded-lg">
+            <input
               type="email"
               placeholder="Enter your Email"
               className="px-3 py-2 sm:w-[508px] h-auto rounded-lg border border-gray-600 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -23,17 +23,15 @@ export default function Footer() {
           </div>
         </div>
 
-
-        <div className="flex flex-col md:flex-row items-center  my-4 justify-between space-y-6 md:space-y-0">
+        <div className="flex flex-col md:flex-row items-center my-4 justify-between space-y-6 md:space-y-0">
           {/* Liens de navigation */}
           <div className="flex space-x-6 text-gray-900 font-medium">
-            <a href="#" className="hover:text-purple-500">Home</a>
-            <a href="#" className="hover:text-purple-500">Category</a>
-            <a href="#" className="hover:text-purple-500">About</a>
-            <a href="#" className="hover:text-purple-500">Contact</a>
+            <Link href="/" className="hover:text-purple-500">Home</Link>
+            <Link href="/category" className="hover:text-purple-500">Category</Link>
+            <Link href="/about" className="hover:text-purple-500">About</Link>
+            <Link href="/contact" className="hover:text-purple-500">Contact</Link>
           </div>
 
-          {/* Icônes sociales */}
           {/* Icônes sociales */}
           <div className="flex space-x-4 text-xl">
             <Link href="#" aria-label="Facebook" className="text-gray-900 hover:text-purple-500 transition-colors">
@@ -50,22 +48,27 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        {/* Ligne de séparation et section des droits d'auteur */}
+
+        {/* Ligne de séparation */}
         <div className="border-t border-gray-300 my-8"></div>
-        
+
+        {/* Bas de page */}
         <div className="flex flex-col md:flex-row items-center justify-between text-sm space-y-4 md:space-y-0">
           <p className="text-center md:text-left text-gray-500">
             © 2022 Monito. All rights reserved
           </p>
-          <div className="flex-shrink-0">
+
+          {/* Logo responsive */}
+          <div className="relative  flex-shrink-0">
             <Image
-              src="/logo.png" 
+              src="/logo.png"
               alt="Monito Logo"
-              width={100}
-              height={30}
-              className="h-auto"
+            width={115}
+            height={40}
+              className="object-contain"
             />
           </div>
+
           <div className="flex space-x-6 text-gray-500">
             <Link href="#" className="hover:underline">Terms of Service</Link>
             <Link href="#" className="hover:underline">Privacy Policy</Link>

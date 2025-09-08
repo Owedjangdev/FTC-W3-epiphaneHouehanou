@@ -1,26 +1,28 @@
-"use client";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { useState } from "react";
-import Image from "next/image";
-import { Menu, X, Search } from "lucide-react";
+"use client"
+
+import React from 'react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import { useState } from 'react';
+import Image from 'next/image';
+import { Menu, X, Search } from 'lucide-react';
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/category", label: "Category" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
+    { href: '/', label: 'Home' },
+    { href: '/category', label: 'Category' },
+    { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   const renderLinks = (baseClass: string) => (
     <>
       {navLinks.map(({ href, label }) => {
         const isActive = pathname === href;
-        const activeClass = isActive ? "border-b-2 border-secondary-80" : "";
+        const activeClass = isActive ? 'border-b-2 border-secondary-80' : '';
 
         return (
           <Link
@@ -36,8 +38,9 @@ const NavBar = () => {
   );
 
   return (
-    <div className=" px-5 md:px-[13%] py-4 fixed">
-      <div className="flex justify-between items-center gap-4">{/* Bouton mobile */}
+    <div className=" top-0 left-0 w-full z-40 shadow-md">
+      <div className="container mx-auto px-5 md:px-12 lg:px-[13%] py-4 flex justify-between items-center gap-4">
+        {/* Bouton mobile */}
         <button
           className="sm:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -50,9 +53,8 @@ const NavBar = () => {
           <Image src="/logo.png" alt="logo" width={115} height={40} />
         </div>
 
-               <Search className=" sm:hidden   " />
+        <Search className="sm:hidden" />
           
-
         {/* Menu desktop */}
         <div className="hidden sm:flex items-center gap-6 flex-1">
           {renderLinks("text-sm font-medium")}
@@ -80,40 +82,28 @@ const NavBar = () => {
             <span>VND</span>
           </div>
         </div>
-
-        
       </div>
 
       {/* Menu mobile */}
       <div
-        className={`absolute top-0 w-full bg-[#FCEED5] h-screen flex flex-col gap-4 p-6
-          transition-all duration-300 sm:hidden z-50 ${
-            menuOpen ? "left-0" : "left-full"
+        className={`fixed top-0 left-0 w-screen h-screen bg-[#FCEED5] flex flex-col gap-4 p-6
+          transition-transform duration-300 sm:hidden z-50 ${
+            menuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
       >
-        <div className="flex justify-between items-center">
+        <div className="flex justify-end">
           <button
-            className="  sm:hidden "
-            onClick={() => setMenuOpen(!menuOpen)}
+            className="sm:hidden"
+            onClick={() => setMenuOpen(false)}
           >
             <X className="w-6 h-6" />
           </button>
         </div>
 
-        {renderLinks("px-2 py-2 roundede-sm bg-secondary-80 text-center text-white font bold text-2xl")}
-
-       
-       
+        {renderLinks('px-2 py-2 rounded-sm bg-secondary-80 text-center text-white font-bold text-2xl')}
       </div>
     </div>
   );
 };
 
 export default NavBar;
-
-
-
-
-
-
-

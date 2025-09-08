@@ -5,38 +5,11 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { articles } from '../../data';
 
-interface Article {
-    category: string;
-    image: string;
-    title: string;
-    excerpt: string;
-    link: string;
-}
 
-const articles: Article[] = [
-    {
-        category: 'Pet knowledge',
-        image: '/imageUPK1.png',
-        title: 'What is a Pomeranian? How to Identify Pomeranian Dogs',
-        excerpt: 'The Pomeranian, also known as the Pomeranian (Pom) dog, is always in the top of the cutest pets, not only that, the small, lovely, smart, friendly, and skillful circus dog...',
-        link: '/knowledge/pomeranian'
-    },
-    {
-        category: 'Pet knowledge',
-        image: '/imageUPK2.png',
-        title: 'Dog Diet You Need To Know',
-        excerpt: 'Creating a dog\'s diet may seem simple at first, but there are some rules you should know so that your dog can easily absorb the nutrients in the diet. For those who are just starting to raise dogs, especially...',
-        link: '/knowledge/dog-diet'
-    },
-    {
-        category: 'Pet knowledge',
-        image: '/imageUPK3.png',
-        title: 'Why Dogs Bite and Destroy Furniture and How to Prevent It Effectively',
-        excerpt: 'Dog bites are common during development. However, no one wants to see their furniture or important items being bitten by a dog.',
-        link: '/knowledge/furniture'
-    },
-];
+
+
 
 const UsefulPetKnowledge: React.FC = () => {
     return (
@@ -47,7 +20,7 @@ const UsefulPetKnowledge: React.FC = () => {
                     <h2 className="text-3xl font-bold text-[#0c3c6d]">Useful Pet Knowledge</h2>
                 </div>
                 <Link 
-                    href="/knowledge"
+                    href="#"
                     className="flex items-center text-[#0c3c6d] font-semibold mt-4 sm:mt-0 transition-colors hover:text-[#092a4e]"
                 >
                     View more <ArrowRight className="ml-2 w-4 h-4" />
@@ -61,14 +34,15 @@ const UsefulPetKnowledge: React.FC = () => {
                         href={article.link}
                         className="block bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
                     >
-                        <div className="relative w-full h-56">
+                    
                             <Image
                                 src={article.image}
                                 alt={article.title}
-                                fill
-                                className="object-cover"
+                                width={400}
+                                height={224}
+                               className="object-contain"
                             />
-                        </div>
+                        
                         <div className="p-6">
                             <span className="text-xs font-medium text-gray-500 bg-gray-100 rounded-full px-3 py-1 mb-3 inline-block">
                                 {article.category}

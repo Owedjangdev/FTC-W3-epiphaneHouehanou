@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Footer from "@/components/Footer";
-import HeroSection from "@/components/HomeCategory";
+
 import OurPets from "@/components/OurPet";
 import OurProducts from "@/components/OurProduct";
 import PetAdoptionSection from "@/components/PetAdoptionSection";
 import UPK from "@/components/UPK";
 import Link from "next/link";
 import NavBar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   return (

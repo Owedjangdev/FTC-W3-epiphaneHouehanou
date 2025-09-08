@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X, Search, ChevronDown } from "lucide-react";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,16 +36,19 @@ const NavBar = () => {
   );
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-secondary px-5 md:px-[13%] py-4 shadow-md z-50">
+    <nav className="fixed top-0 left-0 w-full bg-secondary px-5 md:px-12 lg:px-[13%] py-4 shadow-md z-40">
       <div className="flex justify-between items-center gap-4">
         {/* Bouton mobile */}
         <button className="sm:hidden" onClick={() => setMenuOpen(!menuOpen)}>
           <Menu className="w-6 h-6" />
         </button>
 
-        {/* Logo */}
-        <div className="flex items-center">
-          <Image src="/logo.png" alt="logo" width={115} height={40} />
+       {/* Logo with the oval background */}
+        <div className="relative">
+          <div className="hidden sm:block absolute -left-15 -top-14 w-48 h-30 bg-secondary-80 rounded-full z-0 transform -rotate-12"></div>
+          <div className="relative z-10">
+            <Image src="/logo.png" alt="logo" width={115} height={40} />
+          </div>
         </div>
 
         <Search className="sm:hidden" />
@@ -55,7 +58,7 @@ const NavBar = () => {
           {renderLinks("text-sm font-medium")}
 
           {/* Barre de recherche */}
-          <div className="flex-1 max-w-md relative">
+          <div className="relative">
             <input
               type="text"
               placeholder="Search something here!"
@@ -75,15 +78,16 @@ const NavBar = () => {
           <div className="flex items-center gap-2 cursor-pointer">
             <span className="text-red-600 text-lg">🔴</span>
             <span>VND</span>
+            <ChevronDown className="w-4 h-4"/>
           </div>
         </div>
       </div>
 
       {/* Menu mobile */}
       <div
-        className={`absolute top-0 left-0 w-full bg-[#FCEED5] h-screen flex flex-col gap-6 p-6
-          transition-transform duration-300 sm:hidden z-40
-          ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 left-0 w-full bg-[#FCEED5] h-screen flex flex-col gap-6 p-6 transition-transform duration-300 sm:hidden z-40 ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
         <div className="flex justify-end">
           <button onClick={() => setMenuOpen(false)}>

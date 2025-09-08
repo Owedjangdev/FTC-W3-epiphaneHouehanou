@@ -1,87 +1,68 @@
-// app/components/HeroSection.tsx
-"use client";
+// components/HeroSection.tsx
+import Image from 'next/image';
 
-import Image from "next/image";
-import Link from "next/link";
-
-export default function HeroSection() {
+const HeroSection: React.FC = () => {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 md:px-6 py-6">
-      <div className="relative rounded-3xl overflow-hidden h-[220px] md:h-[360px] bg-[#072A3B]">
-        {/* Partie crème à droite (SVG en arrière-plan) */}
-        <svg
-          className="absolute inset-0 w-full h-full z-0"
-          viewBox="0 0 1440 360"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            d="
-              M1440 0
-              H720
-              C540 0, 540 360, 720 360
-              H1440
-              Z
-            "
-            fill="#F6E9D3"
+    <div className="flex flex-col lg:flex-row max-w-7xl mx-auto rounded-[2rem] shadow-2xl overflow-hidden mt-10 lg:mt-20 bg-secondary">
+      
+      {/* Colonne de gauche : Image et fond bleu */}
+      <div className="relative w-full lg:w-2/5 min-h-[400px] lg:min-h-0 bg-primary-80 flex items-end justify-center rounded-t-[2rem] lg:rounded-l-[2rem] lg:rounded-tr-none">
+        
+        {/* L'image de la personne avec le chien */}
+        <div className="relative z-10 w-full p-4 lg:p-0">
+          <Image
+            src="/heroPhoto.png" 
+            alt="One More Friend"
+            width={500}
+            height={500}
+            className="w-full h-auto object-cover"
           />
-        </svg>
-
-        {/* Image à gauche, au-dessus du bleu */}
-        <div className="absolute left-4 md:left-8 bottom-0 z-20">
-          <div className="relative w-[260px] h-[260px] md:w-[480px] md:h-[480px]">
-            <Image
-              src="/heroPhoto.png"
-              alt="Femme levant son chien"
-              width={1800}
-              height={800}
-              className="object-contain"
-              priority
-            />
-          </div>
         </div>
-
-        {/* Texte + boutons à droite */}
-        <div className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 z-30 w-[58%] md:w-[45%] text-[#072A3B]">
-          <h1 className="text-2xl md:text-5xl font-extrabold leading-tight">
-            One More Friend
-          </h1>
-
-          <h2 className="text-lg md:text-2xl font-extrabold mt-1">
-            Thousands More Fun!   
-          </h2>
-
-         <h2>gang</h2>
-          <p className="mt-3 md:mt-4 text-[11px] md:text-sm text-[#545B61] max-w-[520px]">
-            Having a pet means you have more joy, a new friend, a happy person
-            who will always be with you to have fun. We have 200+ different pets
-            that can meet your needs!
-          </p>
-
-          <div className="mt-4 md:mt-6 flex items-center gap-4">
-            {/* Bouton contour */}
-            <Link
-              href="#intro"
-              className="inline-flex items-center gap-3 rounded-full border-2 border-[#072A3B] px-5 md:px-6 py-2 bg-white text-[#072A3B] text-sm md:text-base font-medium hover:bg-[#072A3B]/5 transition"
+        
+        {/* Fond découpé oblique (la forme de vague est une illusion d'optique due à la découpe) */}
+        <div className="absolute inset-0 bg-primary-60 bg-clipped-shape z-0"></div>
+      </div>
+      
+      {/* Colonne de droite : Contenu textuel et boutons */}
+      <div className="w-full lg:w-3/5 p-8 lg:p-16 flex flex-col justify-center space-y-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-primary-80 leading-tight">
+          One More Friend,
+          <br />
+          <span className="text-4xl md:text-5xl font-extrabold text-primary-80">
+            Thousands More Fun!
+          </span>
+        </h1>
+        <p className="text-gray-600 text-lg max-w-md">
+          Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!
+        </p>
+        
+        {/* Conteneur des boutons */}
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pt-4 items-center">
+          {/* Bouton "View Intro" */}
+          <button className="flex items-center space-x-2 text-primary-80 font-semibold border-2 border-primary-80 rounded-full py-3 px-8 transition duration-300 hover:bg-white/50">
+            <svg
+              className="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <span>View Intro</span>
-              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-current">
-                <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor">
-                  <path d="M4 3.2v5.6L9 6 4 3.2z" />
-                </svg>
-              </span>
-            </Link>
-
-            {/* Bouton plein */}
-            <Link
-              href="#explore"
-              className="inline-flex items-center rounded-full bg-[#072A3B] text-white px-5 md:px-6 py-2 text-sm md:text-base font-medium hover:bg-[#05232b] transition"
-            >
-              Explore Now
-            </Link>
-          </div>
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>View Intro</span>
+          </button>
+          
+          {/* Bouton "Explore Now" */}
+          <button className="bg-primary-80 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 hover:bg-opacity-90">
+            Explore Now
+          </button>
         </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default HeroSection;

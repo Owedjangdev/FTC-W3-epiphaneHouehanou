@@ -38,3 +38,27 @@ export interface Product {
   gift: string;
   giftType: string;
 }
+
+
+
+
+export interface Article {
+    category: string;
+    image: string;
+    title: string;
+    excerpt: string;
+    link: string;
+}
+
+export interface ProductDetail {
+  label: string;
+  value: string;
+}
+
+export interface ProductAbout{
+  name: string;
+  price: string;
+  sku: string;
+  details: ProductDetail[];
+  images: string[];
+}
