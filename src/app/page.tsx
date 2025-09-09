@@ -8,6 +8,7 @@ import UPK from "@/components/UPK";
 import Link from "next/link";
 import NavBar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import { PlayCircle } from "lucide-react";
 
 export default function Home() {
   return (
@@ -40,22 +41,18 @@ export default function Home() {
                 person <br /> who will always be with you to have fun. We have
                 200+ different pets <br /> that can meet your needs!
               </p>
-              <div className="flex flex-row gap-2">
+              <div className="flex flex-row gap-2 ">
                 <Link
-                  href="/"
-                  className="inline-flex items-center gap-2 justify-center px-6 py-3 border border-gray-900 text-gray-900 rounded-full font-medium transition duration-300 hover:bg-gray-100"
+                  href="#"
+                  className="inline-flex items-center gap-2 justify-center px-3 md:px-5 py-3 border border-gray-900 text-gray-900 rounded-full font-medium transition duration-300 hover:bg-gray-100 whitespace-nowrap"
                 >
-                  View Intro{" "}
-                  <Image
-                    src="/Videoicon.png"
-                    alt="Smiling person holding a corgi"
-                    width={18}
-                    height={18}
-                  />
+                  View Intro
+                  <PlayCircle className="ml-1 w-5 h-5" />
                 </Link>
+
                 <Link
-                  href="/"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-blue-900 text-white rounded-full font-medium transition duration-300 hover:bg-blue-800"
+                  href="#"
+                  className="inline-flex items-center justify-center px-3 md:px-5 py-3 bg-blue-900 text-white rounded-full font-medium transition duration-300 hover:bg-blue-800 whitespace-nowrap"
                 >
                   Explore Now
                 </Link>

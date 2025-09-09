@@ -721,7 +721,7 @@ export const productData: ProductAbout = {
     '/shiba-thumb2.png',
     '/shiba-thumb3.png',
     '/shiba-thumb4.png',
-    '/shiba-thumb5.png',
+    '/shiba-thumb6.png',
     '/shiba-thumb6.png',
      '/shiba-thumb7.png',
     

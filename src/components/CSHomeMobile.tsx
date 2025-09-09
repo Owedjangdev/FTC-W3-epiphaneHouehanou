@@ -1,7 +1,7 @@
 // src/components/HeroSection.tsx
 "use client";
 import React from 'react';
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, PlayCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -38,30 +38,22 @@ const HeroSection: React.FC = () => {
           will always be with you to have fun. We have 200+ different pets that
           can meet your needs!
         </p>
-        <div className="mt-6 flex items-center gap-4">
-          <Link
-            href="#intro"
-            className="flex items-center gap-2 rounded-full border-2 border-[#003459] px-6 py-2 text-sm md:text-base font-medium transition duration-300 hover:bg-[#003459] hover:text-white"
-          >
-            View Intro
-            <span>
-              <Image
-                src="/Videoicon.png"
-                alt="Icône de lecture"
-                width={18}
-                height={18}
-                className="object-contain"
-                priority
-              />
-            </span>
-          </Link>
-          <Link
-            href="#explore"
-            className="rounded-full bg-[#003459] text-white px-7 py-2 text-sm md:text-base font-medium transition duration-300 hover:bg-[#003459]/90"
-          >
-            Explore Now
-          </Link>
-        </div>
+        <div className="flex flex-row gap-2 ">
+                <Link
+                  href="#"
+                  className="inline-flex items-center gap-2 justify-center px-3 md:px-5 py-3 border border-gray-900 text-gray-900 rounded-full font-medium transition duration-300 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  View Intro
+                  <PlayCircle color='white' className="ml-1 w-5 h-5" />
+                </Link>
+
+                <Link
+                  href="#"
+                  className="inline-flex items-center justify-center px-3 md:px-5 py-3 bg-blue-900 text-white rounded-full font-medium transition duration-300 hover:bg-blue-800 whitespace-nowrap"
+                >
+                  Explore Now
+                </Link>
+              </div>
       </div>
       
       {/* Le "cercle" ou la forme d'arrière-plan.
@@ -85,3 +77,5 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
+
+

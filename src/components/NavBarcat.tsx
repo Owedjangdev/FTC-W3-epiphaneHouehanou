@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useState } from 'react';
 import Image from 'next/image';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X, Search, ChevronDown } from 'lucide-react';
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -71,18 +71,24 @@ const NavBar = () => {
         </div>
 
         {/* Actions à droite */}
-        <div className="hidden sm:flex items-center gap-4">
-          <button className="bg-[#003459] text-white px-5 py-2 rounded-full font-medium">
-            Join the community
-          </button>
+       <div className="hidden xl:flex items-center gap-4">  
+             <button className="bg-[#003459] text-white px-2 py-1  lg:px-7 rounded-full font-medium">  
+               Join the community  
+             </button>  
+       
+             {/* Sélecteur de langue */}  
+             <div className="flex items-center gap-2 cursor-pointer">  
+               <Image src="/etoile.png" alt="flag" width={16} height={16}/>
+               VDN  <ChevronDown/>  
+              
+             </div>  
+           </div>  
 
-          {/* Sélecteur de langue */}
-          <div className="flex items-center gap-2 cursor-pointer">
-            <span className="text-red-600 text-lg">🔴</span>
-            <span>VND</span>
-          </div>
-        </div>
-      </div>
+
+
+
+
+
 
       {/* Menu mobile */}
       <div
@@ -102,6 +108,8 @@ const NavBar = () => {
 
         {renderLinks('px-2 py-2 rounded-sm bg-secondary-80 text-center text-white font-bold text-2xl')}
       </div>
+      </div>
+
     </div>
   );
 };

@@ -9,11 +9,11 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div>
+    <div  className=" py-10 ">
       <div className="flex md:hidden">
         <CSHomeMobile />
       </div>
-      <div className="hidden md:flex">
+      <div className="hidden sm:flex py-10 ">
         <HomeCategory />
       </div>
       <div className="block md:hidden">
