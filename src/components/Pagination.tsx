@@ -1,4 +1,5 @@
 // components/Pagination.tsx
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import React from 'react';
 
 type PaginationProps = {
@@ -12,14 +13,14 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
-    <div className="flex justify-center items-center space-x-2 mt-8">
+    <div className="flex justify-center items-center space-x-5 mt-8">
       {/* Bouton pour la page précédente */}
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100 disabled:opacity-50"
+        className="  rounded-md text-gray-700 hover:bg-gray-100 disabled:opacity-50"
       >
-        Précédent
+       <ArrowLeft size={16}  /> 
       </button>
 
       {/* Affichage des numéros de page */}
@@ -28,7 +29,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
           key={page}
           onClick={() => onPageChange(page)}
           className={`px-4 py-2 border rounded-md ${
-            currentPage === page ? 'bg-blue-500 text-white' : 'text-gray-700 hover:bg-gray-100'
+            currentPage === page ? 'bg-primary-80  text-white' : 'text-gray-700 hover:bg-gray-100'
           }`}
         >
           {page}
@@ -39,9 +40,9 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-100 disabled:opacity-50"
+        className=" rounded-md text-gray-700 hover:bg-gray-100 disabled:opacity-50"
       >
-        Suivant
+         <ArrowRight  size={16}  />
       </button>
     </div>
   );

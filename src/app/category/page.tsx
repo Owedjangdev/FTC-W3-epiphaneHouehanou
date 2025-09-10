@@ -20,9 +20,10 @@ const Page = () => {
         <PuppyGalleryMoblie />
       </div>
 
-      <div className="hidden md:block">
+      <div className="hidden md:block py-6">
         <PuppyGallery />
       </div>
+
       <Footer />
     </div>
   );
