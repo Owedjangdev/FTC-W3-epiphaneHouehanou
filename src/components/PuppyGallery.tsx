@@ -8,7 +8,7 @@ import SidebarFilters from './SidebarFilters';
 import Pagination from './Pagination';
 import { Chiot } from '@/types';
 import { chiotsData } from '@/data/chiotData';
-import FilterSort from './FiltrerMobile';
+import FilterSort from './Filtrer';
 
 const PuppyGallery: React.FC = () => {
   const CHIOTS_PAR_PAGE = 8;

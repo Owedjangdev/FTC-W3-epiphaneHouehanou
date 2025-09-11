@@ -11,17 +11,17 @@ const Page = () => {
   return (
     <div  className=" py-10 w-full  ">
       <main className="container mx-auto px-4 md:px-8 lg:px-12 py-8">
-      <div className="flex md:hidden">
+      <div className="block lg:hidden ">
         <CSHomeMobile />
       </div>
-      <div className="hidden sm:flex py-10 ">
+      <div className="hidden lg:flex py-10 ">
         <HomeCategory />
       </div>
-      <div className="block md:hidden">
+      <div className="block md:hidden ">
         <PuppyGalleryMoblie />
       </div>
 
-      <div className="hidden md:block py-6">
+      <div className="hidden md:block py-17">
         <PuppyGallery />
       </div>
 
