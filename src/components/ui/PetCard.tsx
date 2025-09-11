@@ -1,6 +1,7 @@
-import { PetCardProps } from "../../../types";
+
+import { PetCardProps } from "@/types";
 import Image from "next/image";
-// Composant PetCard
+
 export const PetCard = ({ imageSrc, petName, petId, gender, age, price }: PetCardProps) => {
   return (
     <div className="bg-white shadow-2xl w-[185px] mx-auto h-auto md:w-[264px] ">

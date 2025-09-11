@@ -39,26 +39,37 @@ export interface Product {
   giftType: string;
 }
 
-
-
-
 export interface Article {
-    category: string;
-    image: string;
-    title: string;
-    excerpt: string;
-    link: string;
+  category: string;
+  image: string;
+  title: string;
+  excerpt: string;
+  link: string;
 }
 
-export interface ProductDetail {
+export type ProductDetail = {
   label: string;
   value: string;
-}
+};
 
-export interface ProductAbout{
+// Type global pour ton produit
+export type ProductAbout = {
   name: string;
   price: string;
   sku: string;
   details: ProductDetail[];
   images: string[];
+};
+
+export interface Filters {
+  race: string;
+  sexe: string;
+  prixMin: number;
+  prixMax: number;
+  sortBy: string;
+}
+
+export interface SidebarFiltersProps {
+  filters: Filters;
+  setFilters: React.Dispatch<React.SetStateAction<Filters>>;
 }

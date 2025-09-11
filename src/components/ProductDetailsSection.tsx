@@ -15,7 +15,9 @@ import {
   Share2,
   MessageSquareMore,
 } from 'lucide-react';
-import { productData } from '../../data';
+import { productData } from '@/data/ProductData';
+
+
 
 
 
@@ -69,7 +71,7 @@ const ProductDetailsSection: React.FC = () => {
 
           {/* Miniatures */}
           <div className="flex gap-4 overflow-x-auto w-full justify-center lg:justify-start">
-            {productData.images.map((img, index) => (
+            {productData.images.map((img:string, index:number) => (
               <div
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}

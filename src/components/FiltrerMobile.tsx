@@ -1,7 +1,6 @@
-"use client"
-import { ChevronDown } from 'lucide-react';
-import { useState } from 'react';
-
+"use client";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 type FilterSortProps = {
   onSortChange: (value: string) => void;
@@ -9,8 +8,7 @@ type FilterSortProps = {
 };
 
 const FilterSort = ({ onSortChange, onFilterClick }: FilterSortProps) => {
- 
-  const [sortBy, setSortBy] = useState('popular');
+  const [sortBy, setSortBy] = useState("popular");
 
   const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value;
@@ -23,6 +21,7 @@ const FilterSort = ({ onSortChange, onFilterClick }: FilterSortProps) => {
       {/* Menu de tri */}
       <div className="relative">
         <select
+          title="Filtrer les résultats"
           className="appearance-none bg-white border border-gray-300 rounded-xl py-2 px-4 pr-8  leading-tight focus:outline-none "
           value={sortBy}
           onChange={handleSortChange}
@@ -32,12 +31,9 @@ const FilterSort = ({ onSortChange, onFilterClick }: FilterSortProps) => {
           <option value="price-desc">Prix : Décroissant</option>
         </select>
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-         
-        < ChevronDown size={14}/> 
-             </div>
+          <ChevronDown size={14} />
+        </div>
       </div>
-
-    
     </div>
   );
 };

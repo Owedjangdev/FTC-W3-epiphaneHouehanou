@@ -1,9 +1,10 @@
-import Image from "next/image";
-import { pets } from "../../data";
-import Link from "next/link";
-import {  ChevronRight } from "lucide-react";
 
-// Composant OurPets (direct sans PetCard)
+import { pets } from "@/data/pet";
+import { ChevronRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+
 export default function OurPets() {
   return (
     <div className="container mx-auto px-4 py-12">
@@ -16,11 +17,13 @@ export default function OurPets() {
           </h1>
         </div>
         <Link
-          href="/"
+          href="#"
           className="mt-4 md:mt-0 hidden   md:flex items-center gap-2 px-6 py-2 border border-gray-900 text-gray-900 rounded-full font-medium transition-colors hover:bg-gray-100"
         >
-          View more 
-           <span><ChevronRight size={18} /></span>
+          View more
+          <span>
+            <ChevronRight size={18} />
+          </span>
         </Link>
       </div>
 
@@ -49,17 +52,17 @@ export default function OurPets() {
             </div>
           </div>
         ))}
-
-         
       </div>
 
-    <Link
-          href="/"
-          className="mt-4   md:hidden  w-full flex items-center justify-center gap-2 px-6 py-2 border border-gray-900 text-gray-900 rounded-full font-medium transition-colors hover:bg-gray-100"
-        >
-          View more 
-           <span><ChevronRight size={18} /></span>
-        </Link>
+      <Link
+        href="/"
+        className="mt-4   md:hidden  w-full flex items-center justify-center gap-2 px-6 py-2 border border-gray-900 text-gray-900 rounded-full font-medium transition-colors hover:bg-gray-100"
+      >
+        View more
+        <span>
+          <ChevronRight size={18} />
+        </span>
+      </Link>
     </div>
   );
 }

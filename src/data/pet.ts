@@ -1,0 +1,68 @@
+import { Pet } from "@/types";
+
+export const pets: Pet[] = [
+  {
+    id: "MO231",
+    name: "Pomeranian White",
+    image: "/image1.png",
+    gender: "Male",
+    age: "02 months",
+    price: "6.900.000 VND",
+  },
+  {
+    id: "MO502",
+    name: "Poodle Tiny Yellow",
+    image: "/image2.png",
+    gender: "Female",
+    age: "02 months",
+    price: "3.900.000 VND",
+  },
+  {
+    id: "MO102",
+    name: "Poodle Tiny Sepia",
+    image: "/image3.png",
+    gender: "Male",
+    age: "02 months",
+    price: "4.000.000 VND",
+  },
+  {
+    id: "MO512",
+    name: "Alaskan Malamute Grey",
+    image: "/image4.png",
+    gender: "Male",
+    age: "02 months",
+    price: "8.900.000 VND",
+  },
+  {
+    id: "MO231",
+    name: "Pembroke Corgi Cream",
+    image: "/image5.png",
+    gender: "Female",
+    age: "02 months",
+    price: "7.900.000 VND",
+  },
+  {
+    id: "MO502",
+    name: "Pembroke Corgi Tricolor",
+    image: "/image6.png",
+    gender: "Male",
+    age: "02 months",
+    price: "9.000.000 VND",
+  },
+  {
+    id: "MO231",
+    name: "Pomeranian White",
+    image: "/image7.png",
+    gender: "Female",
+    age: "02 months",
+    price: "6.500.000 VND",
+  },
+  {
+    id: "MO512",
+    name: "Poodle Tiny Dairy Cow",
+    image: "/image8.png",
+    gender: "Male",
+    age: "02 months",
+    price: "5.000.000 VND",
+  },
+];

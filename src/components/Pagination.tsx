@@ -1,6 +1,5 @@
-// components/Pagination.tsx
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import React from 'react';
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import React from "react";
 
 type PaginationProps = {
   currentPage: number;
@@ -8,8 +7,11 @@ type PaginationProps = {
   onPageChange: (page: number) => void;
 };
 
-const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
-  // Crée un tableau d'index de 1 au nombre total de pages
+const Pagination: React.FC<PaginationProps> = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+}) => {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
@@ -20,16 +22,18 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         disabled={currentPage === 1}
         className="  rounded-md text-gray-700 hover:bg-gray-100 disabled:opacity-50"
       >
-       <ArrowLeft size={16}  /> 
+        <ArrowLeft size={16} />
       </button>
 
       {/* Affichage des numéros de page */}
-      {pages.map(page => (
+      {pages.map((page) => (
         <button
           key={page}
           onClick={() => onPageChange(page)}
           className={`px-4 py-2 border rounded-md ${
-            currentPage === page ? 'bg-primary-80  text-white' : 'text-gray-700 hover:bg-gray-100'
+            currentPage === page
+              ? "bg-primary-80  text-white"
+              : "text-gray-700 hover:bg-gray-100"
           }`}
         >
           {page}
@@ -42,7 +46,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         disabled={currentPage === totalPages}
         className=" rounded-md text-gray-700 hover:bg-gray-100 disabled:opacity-50"
       >
-         <ArrowRight  size={16}  />
+        <ArrowRight size={16} />
       </button>
     </div>
   );

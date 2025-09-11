@@ -2,9 +2,12 @@
 
 import { useState, useEffect } from "react";
 import FilterSort from "./FiltrerMobile";
-import { chiotsData } from "../../data";
-import { Chiot } from "../../types";
+
 import Pagination from "./Pagination";
+import { Chiot } from "@/types";
+import { chiotsData } from "@/data/chiotData";
+
+
 
 const PuppyGallery = () => {
   const [filtres, setFiltres] = useState({
@@ -14,11 +17,11 @@ const PuppyGallery = () => {
   });
 
   const [chiotsAfficher, setChiotsAfficher] = useState<Chiot[]>(chiotsData);
-  // Définissez le nombre de chiots par page
+
   const CHIOTS_PAR_PAGE = 8;
-  // Ajoutez un état pour la page actuelle
+
   const [currentPage, setCurrentPage] = useState(1);
-  // Un état pour stocker les chiots après filtrage et tri, mais avant pagination
+
   const [chiotsFiltres, setChiotsFiltres] = useState<Chiot[]>(chiotsData);
 
   useEffect(() => {
@@ -66,12 +69,9 @@ const PuppyGallery = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    // Conteneur principal: Centré avec une marge horizontale sur mobile
     <div className="flex flex-col items-center p-4 md:p-6 lg:p-8">
-      {/* Panneau de filtre latéral : masqué sur mobile, visible sur les écrans plus grands */}
       <div className="hidden md:block md:w-1/4 md:pr-4 md:border-r md:border-gray-200">
         <h2 className="text-xl font-bold mb-4">Filtre</h2>
-        {/* Ajoutez ici d'autres filtres */}
       </div>
 
       {/* Contenu principal */}

@@ -4,8 +4,11 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-import { articles } from '../../data';
+import {  ChevronRight } from 'lucide-react';
+import { articles } from '@/data/articles';
+
+
+
 
 
 
@@ -19,12 +22,9 @@ const UsefulPetKnowledge: React.FC = () => {
                     <p className="text-gray-500 text-sm mb-1">You already know?</p>
                     <h2 className="text-3xl font-bold text-[#0c3c6d]">Useful Pet Knowledge</h2>
                 </div>
-                <Link 
-                    href="#"
-                    className="flex items-center text-[#0c3c6d] font-semibold mt-4 sm:mt-0 transition-colors hover:text-[#092a4e]"
-                >
-                    View more <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
+                <button className="flex items-center text-[#0c3c6d] border rounded-full px-3 py-3 justify-center  font-semibold mt-4 sm:mt-0">
+          View More <ChevronRight className="ml-2 w-4 h-4" />
+        </button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
