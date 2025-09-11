@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="relative w-full max-w-[1400px] mx-auto pt-4 pb-30 md:pb-40 lg:pb-50 overflow-hidden">
+    <div className="relative w-full  mx-auto pt-4 pb-30 md:pb-40 lg:pb-50 overflow-hidden">
       {/* Fil d'Ariane */}
 
       <div className="absolute top-4 left-8 z-10 text-[#6B7280] md:left-[12%]">

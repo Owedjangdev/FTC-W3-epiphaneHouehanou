@@ -1,13 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import FilterSort from "./FiltrerMobile";
 
 import Pagination from "./Pagination";
 import { Chiot } from "@/types";
 import { chiotsData } from "@/data/chiotData";
-
-
+import FilterSort from "./FiltrerMobile";
+import { Filter } from "lucide-react";
 
 const PuppyGallery = () => {
   const [filtres, setFiltres] = useState({
@@ -70,17 +69,19 @@ const PuppyGallery = () => {
   };
   return (
     <div className="flex flex-col items-center p-4 md:p-6 lg:p-8">
-      <div className="hidden md:block md:w-1/4 md:pr-4 md:border-r md:border-gray-200">
-        <h2 className="text-xl font-bold mb-4">Filtre</h2>
-      </div>
-
       {/* Contenu principal */}
-      <div className="w-full max-w-lg md:max-w-none flex-1">
-        <FilterSort
-          onSortChange={handleSortChange}
-          onFilterClick={handleFilterClick}
-        />
 
+      <div className="w-full max-w-lg md:max-w-none flex-1">
+        <div className="flex justify-between items-center p-4">
+          <FilterSort
+            onSortChange={handleSortChange}
+            onFilterClick={handleFilterClick}
+          />
+          <div className="flex items-center space-x-2">
+            <h2 className="text-xl font-bold ">Filtre</h2>
+            <Filter className="w-5 h-5" />
+          </div>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-3  gap-6 mt-4">
           {chiotsAfficher.map((chiot) => (
             <div

@@ -4,10 +4,11 @@
 import { useState, useEffect } from 'react';
 
 import SidebarFilters from './SidebarFilters';
-import FilterSort from './FiltrerMobile';
+
 import Pagination from './Pagination';
 import { Chiot } from '@/types';
 import { chiotsData } from '@/data/chiotData';
+import FilterSort from './FiltrerMobile';
 
 const PuppyGallery: React.FC = () => {
   const CHIOTS_PAR_PAGE = 8;

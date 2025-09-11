@@ -7,7 +7,7 @@ type FilterSortProps = {
   onFilterClick?: () => void;
 };
 
-const FilterSort = ({ onSortChange, onFilterClic}: FilterSortProps) => {
+const FilterSort = ({ onSortChange, onFilterClick }: FilterSortProps) => {
   const [sortBy, setSortBy] = useState("popular");
 
   const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
