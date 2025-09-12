@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-[#FCEED5] px-2 md:px-8 md:pb-0 overflow-hidden">
+    <section className="relative bg-[#FCEED5] p px-2 md:px-8 md:py-6 overflow-hidden">
       {/* ✅ MOBILE */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -59,7 +59,7 @@ export default function HeroSection() {
           className="mt-12 relative w-full h-[350px]"
         >
           <Image
-            src="/heroPhoto.png"
+            src="/homePhoto.png"
             alt="Woman Dog"
             fill
             className="object-contain rounded-xl z-10 relative"
