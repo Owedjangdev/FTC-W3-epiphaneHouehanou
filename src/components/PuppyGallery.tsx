@@ -9,6 +9,8 @@ import Pagination from './Pagination';
 import { Chiot } from '@/types';
 import { chiotsData } from '@/data/chiotData';
 import FilterSort from './Filtrer';
+import Link from 'next/link';
+
 
 const PuppyGallery: React.FC = () => {
   const CHIOTS_PAR_PAGE = 8;
@@ -111,7 +113,7 @@ const PuppyGallery: React.FC = () => {
     }
 
     return chiotsActuels.map(chiot => (
-      <div key={chiot.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+      <Link href={`/category/${chiot.id}`} key={chiot.id}  className="bg-white rounded-lg shadow-md overflow-hidden">
         <img src={chiot.imageUrl} alt={chiot.nom} className="w-full h-48 object-cover" />
         <div className="p-4">
           <h3 className="text-lg font-bold ">{chiot.nom}- {chiot.race}</h3>
@@ -121,7 +123,7 @@ const PuppyGallery: React.FC = () => {
           </div>
           <p className="text-lg font-semibold mt-2">{chiot.prix} €</p>
         </div>
-      </div>
+      </Link>
     ));
   };
 

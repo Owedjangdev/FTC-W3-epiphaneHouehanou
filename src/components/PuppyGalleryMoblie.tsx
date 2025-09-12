@@ -7,6 +7,7 @@ import { Chiot } from "@/types";
 import { chiotsData } from "@/data/chiotData";
 import FilterSort from "./FiltrerMobile";
 import { Filter } from "lucide-react";
+import Link from "next/link";
 
 const PuppyGallery = () => {
   const [filtres, setFiltres] = useState({
@@ -103,7 +104,7 @@ const PuppyGallery = () => {
       );
     }
     return chiotsActuels.map((chiot) => (
-      <div key={chiot.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+      <Link href={`/category/${chiot.id}`} key={chiot.id} className="bg-white rounded-lg shadow-md overflow-hidden">
         <img
           src={chiot.imageUrl}
           alt={chiot.nom}
@@ -121,7 +122,7 @@ const PuppyGallery = () => {
           </p>
           <p className="text-md font-semibold mt-2">{chiot.prix} €</p>
         </div>
-      </div>
+      </Link>
     ));
   };
 

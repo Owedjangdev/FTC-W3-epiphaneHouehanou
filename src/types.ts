@@ -47,19 +47,25 @@ export interface Article {
   link: string;
 }
 
-export type ProductDetail = {
+// src/types.ts
+
+// Pour les détails de chaque produit
+export interface ProductDetail {
   label: string;
   value: string;
-};
+}
 
-// Type global pour ton produit
-export type ProductAbout = {
+// Pour un produit dans le tableau
+export interface ProductAbout {
+  id: string;
   name: string;
   price: string;
   sku: string;
-  details: ProductDetail[];
   images: string[];
-};
+  details: ProductDetail[];
+}
+
+
 
 export interface Filters {
   race: string;
