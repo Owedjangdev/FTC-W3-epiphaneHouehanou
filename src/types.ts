@@ -47,7 +47,7 @@ export interface Article {
   link: string;
 }
 
-// src/types.ts
+
 
 // Pour les détails de chaque produit
 export interface ProductDetail {
