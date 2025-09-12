@@ -1,74 +1,209 @@
-'use client';
-import React from 'react';
-import { PlayCircle } from "lucide-react";
+"use client";
+
+
+import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
- {/* Section Hero */}
- const HeroSection: React.FC = () => {
+
+
+export default function HeroSection() {
   return (
-        <section className="relative w-full overflow-hidden bg-secondary ">
-          {/* Fond de la section */}
-          <div className="absolute inset-0 bg-secondary-50 transform -skew-y-2"></div>
+    <section className="relative bg-[#FCEED5] px-2 md:px-8 md:pb-0 overflow-hidden">
+      {/* ✅ MOBILE */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="block md:hidden pt-10"
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative z-30 max-w-xl text-left px-4 sm:px-6"
+        >
+          <h1 className="text-[#003459] text-4xl font-bold leading-tight">
+            One More Friend
+          </h1>
+          <h4 className="text-[#003459] text-2xl font-semibold mt-2">
+            Thousands More Fun!
+          </h4>
+          <p className="mt-4 text-[#003459] text-sm leading-relaxed">
+            Having a pet means you have more joy, a new friend, a happy person
+            who will always be with you to have fun. We have 200+ different pets
+            that can meet your needs!
+          </p>
 
-          <div className="relative z-10 w-full max-w-[1400px]   mx-auto flex flex-col lg:flex-row items-center justify-between px-5 md:px-10 py-16 md:py-24">
-            {/* Partie texte */}
-            <div>
-              <div className="flex flex-row gap-9">
-                <h1 className="text-2xl md:text-4xl font-bold text-primary-80 mb-4">
-                  <span className="w-16 h-16 bg-secondary-80 rotate-60 rounded-full inline-flex items-center justify-center">
-                    O
-                  </span>
-                  ne More Friend
-                  <div className="flex gap-12">
-                    {" "}
-                    Thousands More Fun!{" "}
-                    {/* Petit losange bleu entre les titres */}
-                    <div className="w-4 h-4 bg-[#003459] transform rotate-45 -mt-2"></div>
-                  </div>
-                </h1>
-              </div>
-              <p className="text-gray-700 text-sm mb-8">
-                Having a pet means you have more joy, a new friend, a happy
-                person <br /> who will always be with you to have fun. We have
-                200+ different pets <br /> that can meet your needs!
-              </p>
-              <div className="flex flex-row gap-2 ">
-                <Link
-                  href="#"
-                  className="inline-flex items-center gap-2 justify-center px-3 md:px-5 py-3 border border-gray-900 text-gray-900 rounded-full font-medium transition duration-300 hover:bg-gray-100 whitespace-nowrap"
-                >
-                  View Intro
-                  <PlayCircle className="ml-1 w-5 h-5" />
-                </Link>
-
-                <Link
-                  href="#"
-                  className="inline-flex items-center justify-center px-3 md:px-5 py-3 bg-blue-900 text-white rounded-full font-medium transition duration-300 hover:bg-blue-800 whitespace-nowrap"
-                >
-                  Explore Now
-                </Link>
-              </div>
-            </div>
-
-            {/* Partie droite : Image et formes géométriques */}
-            {/* Partie image */}
-            <div className="flex relative mt-12 md:mt-0">
-              <div className="relative w-full h-full">
-                <Image
-                  src="/homePhoto.png"
-                  alt="Smiling person holding a corgi"
-                  width={1887}
-                  height={1258}
-                  className="relative z-30 w-full h-full max-h-[400px]"
-                />
-                <div className="absolute -bottom-12 left-[5%] w-[60%] h-[80%] bg-blue-900 rounded-2xl rotate-16 z-10"></div>
-                <div className="absolute -bottom-12 left-[9%] w-[60%] h-[80%] rounded-2xl  shadow-2xl bg-secondary-80 z-20 rotate-35"></div>
-              </div>
-            </div>
+          <div className="mt-6 flex flex-row gap-4 justify-start">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-7 py-2 text-sm border border-[#003459] text-[#003459] rounded-full font-semibold hover:bg-[#003459] hover:text-white transition"
+            >
+              View Intro
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-7 py-2 text-sm bg-[#003459] text-white rounded-full font-semibold hover:bg-white hover:text-[#003459] transition"
+            >
+              Explore Now
+            </motion.button>
           </div>
-        </section>
+        </motion.div>
 
-         );
-};
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-12 relative w-full h-[350px]"
+        >
+          <Image
+            src="/heroPhoto.png"
+            alt="Woman Dog"
+            fill
+            className="object-contain rounded-xl z-10 relative"
+            priority
+          />
+        </motion.div>
+      </motion.div>
 
-export default HeroSection;
+     
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="hidden md:block lg:hidden items-center justify-between"
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="py-4 max-w-xl w-full mx-auto text-left z-20"
+        >
+          <h1 className="text-[#003459] text-4xl font-bold leading-tight">
+            One More Friend
+          </h1>
+          <h4 className="text-[#003459] text-2xl font-semibold mt-2">
+            Thousands More Fun!
+          </h4>
+          <p className="mt-8 text-[#003459] text-base leading-relaxed">
+            Having a pet means you have more joy, a new friend, a happy <br />
+            person who will always be with you to have fun. We have 200+ <br />
+            different pets that can meet your needs!
+          </p>
+
+          <div className="mt-8 flex gap-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 text-base border border-[#003459] text-[#003459] rounded-full font-semibold hover:bg-[#003459] hover:text-white transition"
+            >
+              View Intro
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 text-base bg-[#003459] text-white rounded-full font-semibold hover:bg-white hover:text-[#003459] transition"
+            >
+              Explore Now
+            </motion.button>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="w-full flex items-end justify-center"
+        >
+          <Image
+            src="/homePhoto.png"
+             alt="femme avec chien"
+            width={700}
+            height={500}
+            className="object-contain rounded-xl"
+            priority
+          />
+        </motion.div>
+      </motion.div>
+
+    
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="hidden lg:flex relative h-full w-full px-6 items-center justify-between"
+      >
+       
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-3xl w-full h-full mx-auto text-left z-20 px-8"
+        >
+          <h1 className="text-[#003459] font-bold leading-tight text-4xl">
+            One More Friend
+          </h1>
+          <h4 className="text-[#003459] text-3xl font-semibold mt-2">
+            Thousands More Fun!
+          </h4>
+          <p className="mt-8 text-[#003459] text-lg leading-relaxed">
+            Having a pet means you have more joy, a new friend, a happy person
+            who will always be with you to have fun. We have 200+ different pets
+            that can meet your needs!
+          </p>
+
+          <div className="mt-6 flex gap-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-4 text-base border border-[#003459] text-[#003459] rounded-full font-semibold hover:bg-[#003459] hover:text-white transition"
+            >
+              View Intro
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-4 text-base bg-[#003459] text-white rounded-full font-semibold hover:bg-white hover:text-[#003459] transition"
+            >
+              Explore Now
+            </motion.button>
+          </div>
+        </motion.div>
+
+        {/* Image + décor */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="relative w-[1850px] translate-x-[-50px] h-[600px]"
+        >
+          {/* décorations */}
+          <div className="absolute top-38 left-22 w-5 h-5 rounded bg-[#F7DBA7] rotate-64 z-20"></div>
+          <div className="absolute top-40 left-22 w-4 h-4 rounded bg-[#002A48] rotate-45 z-20"></div>
+          <div className="absolute top-20 left-28 w-3 h-3 rounded bg-[#F7DBA7] rotate-45 z-20"></div>
+          <div className="absolute top-52 left-27 w-[600px] h-[600px] rounded-[100px] bg-[#F7DBA7] rotate-25 z-20" />
+          <div className="absolute top-50 left-20 w-[335px] h-[635px] rounded-[100px] bg-[#003459] rotate-10 z-10" />
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="relative w-full h-full"
+          >
+            <Image
+              src="/homePhoto.png"
+              alt="femme avec chien"
+              fill
+              className="object-contain rounded-xl z-20"
+              priority
+            />
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
