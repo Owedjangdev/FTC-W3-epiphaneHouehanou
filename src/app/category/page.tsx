@@ -1,4 +1,4 @@
-import CSHomeMobile from "@/components/CSHomeMobile";
+
 import Footer from "@/components/Footer";
 
 import HomeCategory from "@/components/HomeCategory";
@@ -6,6 +6,7 @@ import PuppyGalleryMoblie from "@/components/PuppyGalleryMoblie";
 import PuppyGallery from "@/components/PuppyGallery";
 
 import React from "react";
+import CSHomeMobile from "@/components/CSHomeMobile";
 
 const Page = () => {
   return (

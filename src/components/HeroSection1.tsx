@@ -2,13 +2,15 @@
 
 
 import { motion } from "framer-motion";
+import { PlayCircle } from "lucide-react";
+
 import Image from "next/image";
 
 
 export default function HeroSection() {
   return (
     <section className="relative bg-[#FCEED5] p px-2 md:px-8 md:py-6 overflow-hidden">
-      {/* ✅ MOBILE */}
+     
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +42,7 @@ export default function HeroSection() {
               whileTap={{ scale: 0.95 }}
               className="px-7 py-2 text-sm border border-[#003459] text-[#003459] rounded-full font-semibold hover:bg-[#003459] hover:text-white transition"
             >
-              View Intro
+              View Intro  <PlayCircle className="ml-2 h-4 w-4 inline" />
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -162,7 +164,7 @@ export default function HeroSection() {
               whileTap={{ scale: 0.95 }}
               className="px-10 py-4 text-base border border-[#003459] text-[#003459] rounded-full font-semibold hover:bg-[#003459] hover:text-white transition"
             >
-              View Intro
+              View Intro <PlayCircle className="ml-2 h-4 w-4 inline" />
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
