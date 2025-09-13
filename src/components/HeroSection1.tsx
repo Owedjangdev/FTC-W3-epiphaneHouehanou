@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-[#FCEED5] p px-2 md:px-8 md:py-6 overflow-hidden">
+    <section className="relative bg-[#FCEED5]  px-2 md:px-8 md:py-6 overflow-hidden">
      
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -22,7 +22,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative z-30 max-w-xl py-10  md:py-0 text-left px-4 sm:px-6"
+          className="relative z-30 max-w-xl text-left px-4 sm:px-6"
         >
           <h1 className="text-[#003459] text-4xl font-bold leading-tight">
             One More Friend

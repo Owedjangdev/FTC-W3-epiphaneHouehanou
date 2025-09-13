@@ -15,7 +15,7 @@ export default function Home() {
     <div className="w-full min-h-screen  items-center ">
       <NavBar />
 
-      <main>
+      <main className="py-8">
         <HeroSectionp />
 
         <OurPets />
