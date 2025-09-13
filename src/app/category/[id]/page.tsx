@@ -85,7 +85,7 @@ const ProductDetailsSection: React.FC<ProductPageProps> = ({ params }) => {
             <div
               key={index}
               onClick={() => setCurrentImageIndex(index)}
-              className={`relative w-24 h-20 rounded-lg overflow-hidden cursor-pointer shadow-md border ${
+              className={`relative   w-full h-full lg:w-24 lg:h-20  rounded-lg overflow-hidden cursor-pointer shadow-md border ${
                 currentImageIndex === index
                   ? "border-[#002444]"
                   : "border-gray-200"
