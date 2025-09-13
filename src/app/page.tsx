@@ -1,14 +1,14 @@
-import Image from "next/image";
+
 import Footer from "@/components/Footer";
-import OurPets from "@/components/OurPet";
-import OurProducts from "@/components/OurProduct";
-import PetAdoptionSection from "@/components/PetAdoptionSection";
-import UPK from "@/components/UPK";
+import HeroSection from "@/components/ladingPage/HeroSection";
+import HeroSectionp from "@/components/ladingPage/HeroSection1";
+import NavBar from "@/components/ladingPage/Navbar";
 
-import NavBar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
+import OurPets from "@/components/ladingPage/OurPet";
 
-import HeroSectionp from "@/components/HeroSection1";
+import OurProducts from "@/components/ladingPage/OurProduct";
+import PetAdoptionSection from "@/components/ladingPage/PetAdoptionSection";
+import UPK from "@/components/ladingPage/UPK";
 
 export default function Home() {
   return (
